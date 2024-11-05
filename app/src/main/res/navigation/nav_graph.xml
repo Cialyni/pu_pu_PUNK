@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mapFragment">
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.pupupunk.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/MoveToArea"
+            app:destination="@id/areaViewFragment"
+            app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_mapFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/areaViewFragment"
+        android:name="com.example.pupupunk.AreaViewFragment"
+        android:label="fragment_area_view"
+        tools:layout="@layout/fragment_area_view" >
+        <action
+            android:id="@+id/action_create_activity"
+            app:destination="@id/activityCreateFragment" />
+        <argument
+            android:name="testmes"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/activityCreateFragment"
+        android:name="com.example.pupupunk.ActivityCreateFragment"
+        android:label="fragment_activity_create"
+        tools:layout="@layout/fragment_activity_create" >
+
+        <action
+            android:id="@+id/action_submit_creation"
+            app:destination="@id/areaViewFragment">
+            <argument
+                android:name="message"
+                app:argType="string"
+                android:defaultValue="some activity" />
+        </action>
+        <argument android:name="message"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.pupupunk.ui.main.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
