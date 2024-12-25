@@ -9,56 +9,53 @@
     tools:context=".AreaViewFragment">
 
 
-    <Button
-        android:id="@+id/button_create_activity"
-        android:layout_width="208dp"
-        android:layout_height="99dp"
-        android:layout_marginBottom="56dp"
-        android:text="Создать активность"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/markBox"
-        android:layout_width="410dp"
-        android:layout_height="533dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_create_activity"
+        android:id="@+id/activityRecycle"
+        android:layout_width="409dp"
+        android:layout_height="592dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/activityCreateFragment"
-        android:layout_width="409dp"
-        android:layout_height="364dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context=".MainActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/location"
+        tools:listitem="@layout/activity_item" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/location"
         android:layout_width="264dp"
         android:layout_height="55dp"
-        android:layout_marginTop="28dp"
-        android:text="Локация: 12 общежитие"
+        android:layout_marginTop="48dp"
+        android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="212dp"
-        android:layout_height="36dp"
-        android:text="Настройки поиска"
-        app:layout_constraintBottom_toTopOf="@+id/markBox"
+    <ImageButton
+        android:id="@+id/button_create_activity"
+        android:layout_width="125dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/ic_menu_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityRecycle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/ic_search_category_default"
+        app:layout_constraintBottom_toTopOf="@+id/activityRecycle"
         app:layout_constraintStart_toStartOf="parent" />
 
 

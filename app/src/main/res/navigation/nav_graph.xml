@@ -5,19 +5,6 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/mapFragment">
     <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.example.pupupunk.MapFragment"
-        android:label="fragment_map"
-        tools:layout="@layout/fragment_map" >
-        <action
-            android:id="@+id/MoveToArea"
-            app:destination="@id/areaViewFragment"
-            app:launchSingleTop="false" />
-        <action
-            android:id="@+id/action_mapFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/areaViewFragment"
         android:name="com.example.pupupunk.AreaViewFragment"
         android:label="fragment_area_view"
@@ -26,7 +13,7 @@
             android:id="@+id/action_create_activity"
             app:destination="@id/activityCreateFragment" />
         <argument
-            android:name="testmes"
+            android:name="Area"
             app:argType="string" />
     </fragment>
     <fragment
@@ -43,12 +30,26 @@
                 app:argType="string"
                 android:defaultValue="some activity" />
         </action>
-        <argument android:name="message"
+        <argument
+            android:name="Area"
             app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.pupupunk.ui.main.ProfileFragment"
+        android:name="com.example.pupupunk.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.pupupunk.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_areaViewFragment"
+            app:destination="@id/areaViewFragment"
+            app:popUpTo="@id/mapFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>
